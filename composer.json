@@ -19,6 +19,7 @@
         "spatie/activitylog": "~2.0",
     	"spatie/laravel-backup": "~2.2",
     	"jenssegers/date": "^3.0",
+    	"barryvdh/composer-cleanup-plugin": "0.1.x@dev",
     	"simogeo/Filemanager": "^2.2",
         "edvinaskrucas/notification": "5.*",
         "laralib/l5scaffold": "^1.0",
