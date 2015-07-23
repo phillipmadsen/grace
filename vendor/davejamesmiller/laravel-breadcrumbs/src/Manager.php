@@ -19,8 +19,6 @@ class Manager {
 
 	public function register($name, $callback)
 	{
-		if (isset($this->callbacks[$name]))
-			throw new Exception("Breadcrumb name \"{$name}\" has already been registered");
 		$this->callbacks[$name] = $callback;
 	}
 

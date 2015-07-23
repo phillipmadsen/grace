@@ -53,13 +53,13 @@ After updating composer, add the ServiceProvider to the providers array in confi
 ### Laravel 5.x:
 
 ```
-Barryvdh\Debugbar\ServiceProvider::class,
+'Barryvdh\Debugbar\ServiceProvider',
 ```
 
 If you want to use the facade to log messages, add this to your facades in app.php:
 
 ```
-'Debugbar' => Barryvdh\Debugbar\Facade::class,
+'Debugbar' => 'Barryvdh\Debugbar\Facade',
 ```
 
 
@@ -78,9 +78,7 @@ php artisan vendor:publish
 For Lumen, register a different Provider in `bootstrap/app.php`:
 
 ```
-if (env('APP_DEBUG')) {
- $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
-}
+$app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
 ```
 
 To change the configuration, copy the file to your config folder and enable it:

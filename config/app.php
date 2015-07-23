@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'key'             => env('APP_KEY', ''),
+    'key'             => env('APP_KEY', 'SomeRandomString'),
     'cipher'          => MCRYPT_RIJNDAEL_128,
     /*
     |--------------------------------------------------------------------------
@@ -153,6 +153,8 @@ return [
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
 
+
+
         'Sseffa\VideoApi\VideoApiServiceProvider',
         'Krucas\Notification\NotificationServiceProvider',
 
@@ -161,6 +163,9 @@ return [
         'Spatie\Activitylog\ActivitylogServiceProvider',
         'Spatie\Backup\BackupServiceProvider',
         'Laralib\L5scaffold\GeneratorsServiceProvider',
+
+
+
 
     ],
     /*

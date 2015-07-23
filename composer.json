@@ -2,7 +2,6 @@
 	"name": "laravel/laravel",
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
-	"repositories": [ {"type": "git", "url": "git@github.com:jamisonvalenta/Laravel-4-Generators.git"} ],
 	"license": "MIT",
 	"type": "project",
 	"require": {
@@ -18,19 +17,12 @@
         "laracasts/flash": "~1.3",
         "spatie/activitylog": "~2.0",
     	"spatie/laravel-backup": "~2.2",
-    	"jenssegers/date": "^3.0",
-    	"simogeo/Filemanager": "^2.2",
         "edvinaskrucas/notification": "5.*",
-        "laralib/l5scaffold": "^1.0",
-        "xethron/migrations-generator": "dev-l5",
-        "way/generators": "dev-feature/laravel-five-stable",
         "sseffa/video-api": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
-		"phpspec/phpspec": "~2.1",
-		"laracasts/generators": "~1.0",
-		"squizlabs/php_codesniffer": "*"
+		"phpspec/phpspec": "~2.1"
 	},
 	"autoload": {
 		"classmap": [
