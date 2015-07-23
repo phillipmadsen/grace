@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'timezone'        => 'UTC',
+    'timezone'        => 'America/Denver',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -152,13 +152,13 @@ return [
         'Grace\Providers\SearchServiceProvider',
         'Grace\Providers\LogViewerServiceProvider',
         'Sseffa\VideoApi\VideoApiServiceProvider',
-        'Krucas\Notification\NotificationServiceProvider'
+        'Krucas\Notification\NotificationServiceProvider',
 
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Spatie\Activitylog\ActivitylogServiceProvider',
-        'Spatie\Backup\BackupServiceProvider', 
-        
-  
+        'Spatie\Backup\BackupServiceProvider',
+
+
 
 
     ],
@@ -219,7 +219,7 @@ return [
         'Feeder'              => 'Grace\Feeder\Facade\Feeder',
         'Search'              => 'Grace\Search\Facade\Search',
         'LogViewer'           => 'Grace\LogViewer\Facade\LogViewer',
-        'Notification'        => 'Krucas\Notification\Facades\Notification'
+        'Notification'        => 'Krucas\Notification\Facades\Notification',
 
         'Activity' => 'Spatie\Activitylog\ActivitylogFacade',
 
