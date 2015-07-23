@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'timezone'        => 'America/Denver',
+    'timezone' => 'America/Denver',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -136,27 +136,33 @@ return [
         'Grace\Providers\ConfigServiceProvider',
         'Grace\Providers\EventServiceProvider',
         'Grace\Providers\RouteServiceProvider',
+
+        'Grace\Providers\RepositoryServiceProvider',
+        'Grace\Providers\ComposerServiceProvider',
+        'Grace\Providers\FeederServiceProvider',
+        'Grace\Providers\SearchServiceProvider',
+        'Grace\Providers\LogViewerServiceProvider',
         /*
          * Grace
          */
         'Cartalyst\Sentry\SentryServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
+
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
-        'Grace\Providers\RepositoryServiceProvider',
-        'Grace\Providers\ComposerServiceProvider',
-        'Grace\Providers\FeederServiceProvider',
-        'Grace\Providers\SearchServiceProvider',
-        'Grace\Providers\LogViewerServiceProvider',
+
+
+
         'Sseffa\VideoApi\VideoApiServiceProvider',
         'Krucas\Notification\NotificationServiceProvider',
 
+        'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Spatie\Activitylog\ActivitylogServiceProvider',
         'Spatie\Backup\BackupServiceProvider',
+        'Laralib\L5scaffold\GeneratorsServiceProvider',
 
 
 
@@ -221,7 +227,7 @@ return [
         'LogViewer'           => 'Grace\LogViewer\Facade\LogViewer',
         'Notification'        => 'Krucas\Notification\Facades\Notification',
 
-        'Activity' => 'Spatie\Activitylog\ActivitylogFacade',
+        'Activity'            => 'Spatie\Activitylog\ActivitylogFacade',
 
     ],
 
