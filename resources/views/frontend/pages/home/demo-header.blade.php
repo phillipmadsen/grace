@@ -50,31 +50,7 @@
 
                         @include('frontend/layout/menu')
 
-             {{--            <ul>
-                            <li><a href="#"><div>Home</div></a></li>
-                            <li class="current"><a href="#"><div>What we do</div></a>
-                                <!-- <ul>
-                                    <li><a href="#"><div>Manufacturing</div></a></li>
-                                    <li><a href="#"><div>Machine Quilting</div></a></li>
-                                    <li><a href="#"><div>Green Homes</div></a></li>
-                                    <li><a href="#"><div>Architecture Design</div></a></li>
-                                    <li><a href="#"><div>Interior Planning</div></a></li>
-                                </ul> -->
-                            </li>
-                            <li><a href="#"><div>About Us</div></a></li>
-                            <li><a href="#"><div>Manufacturing</div></a>
-                                <ul>
-                                    <li><a href="#"><div>Qnique</div></a></li>
-                                    <li><a href="#"><div>Hand Quilting</div></a></li>
-                                    <li><a href="#"><div>Machine Quilting</div></a></li>
-                                    <li><a href="#"><div>Automated Quilting</div></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><div>Investors</div></a></li>
-                            <li><a href="#"><div>News</div></a></li>
-                            <li><a href="#"><div>Careers</div></a></li>
-                            <li><a href="#"><div>Contact</div></a></li>
-                        </ul> --}}
+          
 
                         <script>
                             jQuery(document).ready(function($){
