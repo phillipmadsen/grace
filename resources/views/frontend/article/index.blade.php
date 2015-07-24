@@ -1,4 +1,5 @@
 @extends('frontend/layout/layout')
+ 
 @section('content')
 {!! HTML::script('assets/js/moment-with-langs.min.js') !!}
 <script type="text/javascript">
@@ -15,59 +16,85 @@
         });
     });
 </script>
+{{-- title breadcrumb --}}
+@section('pagetitle')
+<!-- Page Title ============================================= -->
+<section id="page-title">
 
-<section id="title" class="emerald">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>Blog</h1>
-
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-            </div>
-            <div class="col-sm-6">
-                @yield('partial/breadcrumbs', Breadcrumbs::render('blog', $articles))
-            </div>
-        </div>
+    <div class="container clearfix">
+        <h2>Blog</h2>
+        <span>Our Latest News</span>
+        @yield('partial/breadcrumbs', Breadcrumbs::render('blog', $articles))
     </div>
-</section><!--/#title-->
 
-<section id="blog" class="container">
-    <div class="row">
-    @include('frontend/article/sidebar', array($tags, $categories))
-        <div class="col-sm-8 col-sm-pull-4">
-            <div class="blog">
-                @foreach($articles as $article)
-                <div class="blog-item">
-                   @if($article->path)
-                    <img class="img-responsive img-blog" src="{!! url($article->path . $article->file_name) !!}" style="border: 1px solid #bdc3c7;" width="100%" alt=""/>
-                   @else
-                    <img class="img-responsive img-blog" src="{!! url('assets/images/blog_default.png') !!}" style="border: 1px solid #bdc3c7;" width="100%" style="height: 290px;" alt=""/>
-                   @endif
+</section><!-- #page-title end -->
+@stop
+  
+@section('content')
+        <!-- Content ============================================= -->
+        <section id="content">
 
-                    <div class="blog-content">
-                        <a href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}"><h3>{!! $article->title !!}</h3></a>
+            <div class="content-wrap">
 
-                        <div class="entry-meta">
-                            <span><i class="icon-user"></i> <a href="#">Sefa</a></span>
-                            <span datetime="{!! $article->created_at !!}" class="time"></span>
+                <div class="container clearfix">
+                   
+<!-- Post Content ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+                        @foreach($articles as $article)
+<!-- Posts ============================================= -->
+                        <div id="posts" itemscope="" itemtype="http://schema.org/BlogPosting">
+                            <div class="entry clearfix">
+                                <div class="entry-image">
+                                    @if($article->path)
+                                    <a href="images/blog/full/17.jpg" data-lightbox="image">
+                                    <img class="image_fade" src="{!! url($article->path . $article->file_name) !!}" style="border: 1px solid #bdc3c7;" alt="{!! $article->title !!} image"/>
+                                    </a>
+                                   @else
+                                   <a href="images/blog/full/17.jpg" data-lightbox="image">
+                                    <img class="image_fade" src="{!! url('assets/images/blog_default.png') !!}" style="border: 1px solid #bdc3c7;" alt="{!! $article->title !!} image"/>
+                                    </a>
+                                   @endif
+                                </div>
+                                <div class="entry-title">
+                                    <a href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}">
+                                        <h1 itemprop="name headline">{!! $article->title !!}</h1>
+                                    </a>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3" datetime="{!! $article->created_at !!}"></i> 10th February 2014</li>
+                                    <li>
+                                        <span class="byline"><i class="icon-user"></i> 
+                                        <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                                            <span itemprop="name">
+                                                <a href="https://plus.google.com/" itemprop="url" rel="author">
+                                                    The Grace Company
+                                                </a>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li><i class="icon-folder-open"></i> <a href="#">General</a>, <a href="#">Media</a></li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 Comments</a></li>
+                                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+                                </ul> 
+                                <div class="entry-content content" itemprop="articleBody">
+                                    {!! $article->excerpt !!}
+                                    <br />
+                                    <br />
+                                    <a href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}" class="more-link">Read More</a>
+                                </div>
                         </div>
-                        <p>{!! $article->content !!}</p>
-                        <a class="btn btn-default" href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}">Read More <i class="icon-angle-right"></i></a>
-                    </div>
-                </div>
-                <!--/.blog-item-->
-                @endforeach
+                    </div><!-- .posts end -->
+                    @endforeach
+                    </div><!-- .postcontent end -->
 
-                <ul class="pagination pagination-lg">
-                    {!! $articles->render() !!}
-                </ul>
-
-                <!--/.pagination-->
+                
+ @include('frontend/article/sidebar', array($tags, $categories))
             </div>
-        </div>
-        <!--/.col-md-8-->
-    </div>
-    <!--/.row-->
-</section><!--/#blog-->
+
+        </section><!-- #content end -->
+
+@endsection
+
 @stop
 

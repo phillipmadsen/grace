@@ -1,152 +1,220 @@
-<style>
-.tagcloud a, #footer.litex .tagcloud a {
-    background: none repeat scroll 0 0 #fefefe;
-    border: 2px solid #e1e1e1;
-    border-radius: 3px;
-    color: #898989;
-    display: inline-block;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    margin: 0 5px 5px 0;
-    min-width: 18px;
-    padding: 4px 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: auto;
-}
-.tagcloud a:hover, #footer.litex .tagcloud a:hover {
-    border-color: #ffcc00;
-    color: #333;
-}
-.tagcloud a {
-    background: none repeat scroll 0 0 #363636;
-    border: medium none;
-    color: #808080;
-    display: inline-block;
-    margin: 3px;
-    padding: 7px 14px;
-}
-.tagcloud a:hover {
-    background: none repeat scroll 0 0 #e84a52;
-    color: #fff !important;
-}
-.litex .footer-in .tagcloud a {
-    color: #898989;
-}
-.litex .footer-in .tagcloud a:hover {
-    background: none repeat scroll 0 0 #fff;
-    color: #333;
-}
-</style>
-<section id="bottom" class="wet-asphalt">
-    <div class="container">
-        <div class="row">
+    <!-- Footer ============================================= -->
+        <footer id="footer" class="dark">
 
-            <div class="col-md-3 col-sm-6">
-                <h4>Latest Blog</h4>
+            <div class="container">
 
-                <div>
-                    @foreach($articles as $article)
-                    <div class="media">
-                        <div class="pull-left">
-                            @if($article->path && $article->file_name)
-                                <a href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}"><img src="{!! url($article->path . 'thumb_' . $article->file_name) !!}" style="border: 2px solid;" alt=""></a>
-                            @else
-                                <a href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}"><img src="{!! url('assets/images/blog_s.png') !!}" alt="" style="border: 2px solid;"></a>
-                            @endif
+                <!-- Footer Widgets ============================================= -->
+                <div class="footer-widgets-wrap clearfix">
+
+                    <div class="col_two_third">
+
+                        <div class="col_one_third">
+
+                            <div class="widget clearfix">
+
+                                <img src="{!! url('frontend/images/footer-widget-logo.png') !!}" alt="" class="footer-logo">
+
+                                <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Manufacturing Standards.</p>
+
+                                <div style="background: url('{!! url('frontend/images/world-map.png') !!}') no-repeat center center; background-size: 100%;">
+                                    <address>
+                                        <strong>The Grace Company:</strong><br>
+                                        2225 South 3200 West<br>
+                                        West Valley City, UT 84119
+                                        <br>
+                                    </address>
+                                    <abbr title="Phone Number"><strong>Phone:</strong></abbr> +1(800) 264-0644<br>
+                                    <abbr title="Fax"><strong>Fax:</strong></abbr> +1(800) 264-0644<br>
+                                    <abbr title="Email Address"><strong>Email:</strong></abbr> contact@graceframe.com
+                                </div>
+
+                            </div>
+
                         </div>
-                        <div class="media-body">
-                            <span class="media-heading"><a href="{!! URL::route('dashboard.article.show', array('slug'=>$article->slug)) !!}">{!! $article->title !!}</a></span>
-                            <small class="muted">{!! $article->created_at !!}</small>
+
+                        <div class="col_one_third">
+
+                            <div class="widget widget_links clearfix">
+
+                                <h4>Popular</h4>
+
+                                <ul>
+                                    <li><a href="">Documentation</a></li>
+                                    <li><a href="">Feedback</a></li>
+                                    <li><a href="">Plugins</a></li>
+                                    <li><a href="">Support Forums</a></li>
+                                    <li><a href="">Themes</a></li>
+                                    <li><a href="">Press Blog</a></li>
+                                    <li><a href="">Quilting Planet</a></li>
+                                </ul>
+
+                            </div>
+
                         </div>
+
+                        <div class="col_one_third col_last">
+
+                            <div class="widget clearfix">
+                                <h4>Recent Posts</h4>
+
+                                <div id="post-list-footer">
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li>10th July 2014</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+ 
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
-                    @endforeach
+
+                    <div class="col_one_third col_last">
+
+                        <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                            <div class="row">
+
+                                <div class="col-md-6 bottommargin-sm">
+                                    <div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+                                    <h5 class="nobottommargin">Customers</h5>
+                                </div>
+
+                                <div class="col-md-6 bottommargin-sm">
+                                    <div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+                                    <h5 class="nobottommargin">Clients</h5>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="widget subscribe-widget clearfix">
+                            <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
+                            <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
+                            <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+                                <div class="input-group divcenter">
+                                    <span class="input-group-addon"><i class="icon-email2"></i></span>
+                                    <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">Subscribe</button>
+                                    </span>
+                                </div>
+                            </form>
+                            <script type="text/javascript">
+                                $("#widget-subscribe-form").validate({
+                                    submitHandler: function(form) {
+                                        $(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
+                                        $(form).ajaxSubmit({
+                                            target: '#widget-subscribe-form-result',
+                                            success: function() {
+                                                $(form).find('.input-group-addon').find('.icon-line-loader').removeClass('icon-line-loader icon-spin').addClass('icon-email2');
+                                                $('#widget-subscribe-form').find('.form-control').val('');
+                                                $('#widget-subscribe-form-result').attr('data-notify-msg', $('#widget-subscribe-form-result').html()).html('');
+                                                SEMICOLON.widget.notifications($('#widget-subscribe-form-result'));
+                                            }
+                                        });
+                                    }
+                                });
+                            </script>
+                        </div>
+
+                        <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                            <div class="row">
+
+                                <div class="col-md-6 clearfix bottommargin-sm">
+                                    <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                                </div>
+                                <div class="col-md-6 clearfix">
+                                    <a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-rss"></i>
+                                        <i class="icon-rss"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- .footer-widgets-wrap end -->
+
+            </div>
+
+            <!-- Copyrights ============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        Copyrights &copy; 2015 All Rights Reserved by The Grace Company.<br>
+                        <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="fright clearfix">
+                            <a href="#" class="social-icon si-small si-borderless si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                                <i class="icon-vimeo"></i>
+                                <i class="icon-vimeo"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                                <i class="icon-yahoo"></i>
+                                <i class="icon-yahoo"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <i class="icon-envelope2"></i> contact@graceframe.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-800-264-0644 <span class="middot">&middot;</span> <i class="icon-skype2"></i> GraceOnSkype
+                    </div>
+
                 </div>
-            </div>
 
-             <div class="col-md-3 col-sm-6">
-                <h4>About Us</h4>
+            </div><!-- #copyrights end -->
 
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-
-                <p>Pellentesque habitant morbi tristique senectus.</p>
-                <hr>
-                <ul class="social clearfix">
-                    <li><a href="#" title="" data-original-title="Facebook" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" title="" data-original-title="Google Plus" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#" title="" data-original-title="Twitter" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" title="" data-original-title="Youtube" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#" title="" data-original-title="Linkedin" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#" title="" data-original-title="Dribbble" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#" title="" data-original-title="Skype" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-skype"></i></a></li>
-                </ul>
-            </div>
-
-
-            <div class="col-md-3 col-sm-6">
-                <h4>Tags</h4>
-            <div class="tagcloud">
-                <a href="">Features</a><a href="">Inspiration</a><a href="">Showcase</a>
-                <a href="">Graphic Design</a><a href="">Illustration</a><a href="">Design</a>
-                <a href="">Web Design</a><a href="">Video</a><a href="">ART</a><a href="">New Work</a>
-                <a href="">Animation</a><a href="">Photoshop</a><a href="">Digital Painting</a>
-                <a href="">CG</a><a href="">Howto</a>
-            </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <h4>Address</h4>
-                <address>
-                    <strong>Twitter, Inc.</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address>
-                <h4>{!!  trans('grace.newsletter') !!}</h4>
-
-                {!! Form::open(array('route' => 'frontend.maillist.post', 'id'=>'newsletterForm', 'novalidate'=>'novalidate')) !!}
-                <div class="input-group">
-                    <input type="text" class="form-control" autocomplete="off" placeholder="{!!  trans('grace.enter_your_email') !!}">
-                    <span class="input-group-btn">
-                        <button class="btn btn-danger" type="submit">{!!  trans('grace.button_save') !!}</button>
-                    </span>
-                </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-</section>
-<footer id="footer" class="midnight-blue">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <ul class="language_bar_chooser">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <li>
-                        <a rel="alternate" hreflang="{!!$localeCode!!}" href="{!! LaravelLocalization::getLocalizedURL($localeCode) !!}">
-                            {!! $properties['native'] !!}
-                        </a>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="col-sm-4">
-                &copy; 2015 <a target="_blank" href="http://#">The Grace Company</a> {!! trans('grace.all_rights_reserved') !!}.
-                <br>
-                <br>
-               
-            </div>
-            <div class="col-sm-4">
-                <ul class="pull-right">
-                    <li>{!! link_to_route('dashboard', 'Home') !!}</li>
-                    <li>{!! link_to_route('dashboard.faq', 'Faq') !!}</li>
-                    <li>{!! link_to_route('dashboard.contact', 'Contact Us') !!}</li>
-                    <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li>
-                    <!--#gototop-->
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-<!--/#footer-->
+        </footer><!-- #footer end -->

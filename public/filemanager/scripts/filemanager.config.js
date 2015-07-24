@@ -1,8 +1,9 @@
 {
-		"_comment": "IMPORTANT : go to the wiki page to know about options configuration https://github.com/simogeo/Filemanager/wiki/Filemanager-configuration-file",
+        "_comment": "IMPORTANT : go to the wiki page to know about options configuration https://github.com/simogeo/Filemanager/wiki/Filemanager-configuration-file",
     "options": {
         "culture": "en",
         "lang": "php",
+        "theme": "flat-dark",
         "defaultViewMode": "grid",
         "autoload": true,
         "showFullPath": false,
@@ -16,14 +17,17 @@
         "fileSorting": "default",
         "chars_only_latin": true,
         "dateFormat": "d M Y H:i",
-        "serverRoot": true,
-        "fileRoot": "grace/public/uploads/",
-        "relPath": false,
+        "serverRoot": false,
+        "fileRoot": "/",
+        "baseUrl": "/filemanager/",
         "logger": false,
-        "capabilities": ["select", "download", "rename", "move", "delete", "replace"],
+        "capabilities": ["select", "download", "rename", "delete", "replace"],
         "plugins": []
     },
     "security": {
+        "allowFolderDownload": false,
+        "allowChangeExtensions": false,
+        "allowNoExtension": false,
         "uploadPolicy": "DISALLOW_ALL",
         "uploadRestrictions": [
             "jpg",
@@ -50,10 +54,14 @@
             "m4v",
             "ogg",
             "mp3",
-            "wav"
+            "wav",
+            "zip",
+            "rar"
         ]
     },
     "upload": {
+        "multiple": true,
+        "number": 5,
         "overwrite": false,
         "imagesOnly": false,
         "fileSizeLimit": 16
@@ -68,8 +76,8 @@
             ".CDN_ACCESS_LOGS",
             "cloudservers"
         ],
-        "unallowed_files_REGEXP": "/^\\./uis",
-        "unallowed_dirs_REGEXP": "/^\\./uis"
+        "unallowed_files_REGEXP": "/^\\./",
+        "unallowed_dirs_REGEXP": "/^\\./"
     },
     "images": {
         "imagesExt": [
@@ -80,8 +88,8 @@
             "svg"
         ],
         "resize": {
-        	"enabled":true,
-        	"maxWidth": 1280,
+            "enabled":true,
+            "maxWidth": 1280,
             "maxHeight": 1024
         }
     },
@@ -115,6 +123,11 @@
             "csv"
         ]
     },
+    "customScrollbar": {
+        "enabled": true,
+        "theme": "inset-2-dark",
+        "button": true
+    },
     "extras": {
         "extra_js": [],
         "extra_js_async": true
@@ -123,5 +136,7 @@
         "path": "images/fileicons/",
         "directory": "_Open.png",
         "default": "default.png"
-    }
+    },
+    "url": "https://github.com/simogeo/Filemanager",
+    "version": "2.0.0-dev"
 }

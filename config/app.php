@@ -161,6 +161,8 @@ return [
         'Spatie\Activitylog\ActivitylogServiceProvider',
         'Spatie\Backup\BackupServiceProvider',
         'Laralib\L5scaffold\GeneratorsServiceProvider',
+        'Magyarjeti\LaravelLipsum\LipsumServiceProvider',
+        'Devfactory\Minify\MinifyServiceProvider',
 
     ],
     /*
@@ -223,6 +225,8 @@ return [
         'Notification'        => 'Krucas\Notification\Facades\Notification',
 
         'Activity'            => 'Spatie\Activitylog\ActivitylogFacade',
+        'Lipsum'              => 'Magyarjeti\LaravelLipsum\LipsumFacade',
+        'Minify'        => 'Devfactory\Minify\Facades\MinifyFacade',
 
     ],
 

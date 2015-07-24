@@ -14,20 +14,20 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-        $this->call('NewsTableSeeder');
         $this->call('ArticlesTableSeeder');
-        $this->call('TagsTableSeeder');
         $this->call('ArticlesTagsTableSeeder');
         $this->call('CategoriesTableSeeder');
+        $this->call('FaqsTableSeeder');
+        $this->call('MenusTableSeeder');
+        $this->call('NewsTableSeeder');
         $this->call('PagesTableSeeder');
         $this->call('PhotoGalleriesTableSeeder');
-        $this->call('SettingsTableSeeder');
-        $this->call('MenusTableSeeder');
-        $this->call('SlidersTableSeeder');
-        $this->call('FaqsTableSeeder');
         $this->call('ProjectsTableSeeder');
-        $this->call('VideosTableSeeder');
+        $this->call('SettingsTableSeeder');
         $this->call('SlidersTableSeeder');
+        $this->call('TagsTableSeeder');
+        $this->call('VideosTableSeeder');
+
 	}
 
 }

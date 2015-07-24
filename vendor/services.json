@@ -45,7 +45,9 @@
         "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider",
         "Spatie\\Activitylog\\ActivitylogServiceProvider",
         "Spatie\\Backup\\BackupServiceProvider",
-        "Laralib\\L5scaffold\\GeneratorsServiceProvider"
+        "Laralib\\L5scaffold\\GeneratorsServiceProvider",
+        "Magyarjeti\\LaravelLipsum\\LipsumServiceProvider",
+        "Devfactory\\Minify\\MinifyServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -78,7 +80,9 @@
         "Krucas\\Notification\\NotificationServiceProvider",
         "Barryvdh\\Debugbar\\ServiceProvider",
         "Spatie\\Activitylog\\ActivitylogServiceProvider",
-        "Laralib\\L5scaffold\\GeneratorsServiceProvider"
+        "Laralib\\L5scaffold\\GeneratorsServiceProvider",
+        "Magyarjeti\\LaravelLipsum\\LipsumServiceProvider",
+        "Devfactory\\Minify\\MinifyServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

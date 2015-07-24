@@ -17,18 +17,30 @@ if(in_array($locale, $supportedLocales)) {
     App::setLocale($locale);
 }
 
+
+
+
 Route::get('/', function () {
 
     return Redirect::to(LaravelLocalization::getCurrentLocale(), 302);
 });
+
+
+// Home
+// Route::get('/', [
+//     'uses' => 'HomeController@index',
+//     'as' => 'home'
+// ]);
+
 
 Route::group(array('prefix' => LaravelLocalization::getCurrentLocale(), 'before' => array('localization', 'before')), function () {
 
     Session::put('my.locale', LaravelLocalization::getCurrentLocale());
 
     // frontend dashboard
-    Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
+   Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
+Route::get('machine-quilting', array('as' => 'dashboard.page.machine', 'uses' => 'PageController@machine'));
     // article
     Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
     Route::get('/article/{slug}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
@@ -257,6 +269,9 @@ Route::group(array('namespace' => 'Admin'), function () {
     Route::post('admin/reset-password', array('as'   => 'admin.reset.password.post',
                                               'uses' => 'AuthController@postResetPassword'));
 });
+
+
+
 
 /*
 |--------------------------------------------------------------------------

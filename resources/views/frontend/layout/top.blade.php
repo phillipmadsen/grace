@@ -1,33 +1,12 @@
 <style>
-    #topbar {
-        top: 0;
-    }
-    #topbar, #topbar a {
-        color: #888888;
-    }
-    #topbar .social-icons span.last a {
-        border-right: 1px solid #f2f2f2;
-    }
-    #topbar .topbar-email, #topbar .topbar-phone, #topbar .topbar-login, #topbar .topbar-cart {
-        border-left: 1px solid #f2f2f2;
-        border-right: 1px solid #f2f2f2;
-        float: left;
-        line-height: 42px;
-        padding: 0 15px;
-    }
-    #topbar .topbar-phone, #topbar .topbar-email, #topbar .topbar-login {
-        border-right: medium none;
-    }
-    #topbar .col-lg-4 {
-        padding-left: 0;
-    }
-    #topbar .col-lg-8 {
-        padding-right: 0;
-    }
-    #topbar .callus, #topbar .topmenu {
-        display: block;
-        float: right;
-    }
+#topbar{top:0;}
+#topbar,#topbar a{color:#888888;}
+#topbar .social-icons span.last a{border-right:1px solid #f2f2f2;}
+#topbar .topbar-email,#topbar .topbar-phone,#topbar .topbar-login,#topbar .topbar-cart{border-left:1px solid #f2f2f2;border-right:1px solid #f2f2f2;float:left;line-height:42px;padding:0 15px;}
+#topbar .topbar-phone,#topbar .topbar-email,#topbar .topbar-login{border-right:medium none;}
+#topbar .col-lg-4{padding-left:0;}
+#topbar .col-lg-8{padding-right:0;}
+#topbar .callus,#topbar .topmenu{display:block;float:right;}
 </style>
 <div class="dark_header clearfix" id="topbar">
     <div class="container">
@@ -48,8 +27,8 @@
                 <span class="topbar-cart"><i class="fa fa-shopping-cart"></i> <a href="shop-cart.html">0 item - $0.00</a></span>
             </div><!-- end top menu -->
             <div class="callus">
-                <span class="topbar-email"><i class="fa fa-envelope"></i> <a href="mailto:name@yoursite.com">name@yoursite.com</a></span>
-                <span class="topbar-phone"><i class="fa fa-phone"></i> 1-900-324-5467</span>
+                <span class="topbar-email"><i class="fa fa-envelope"></i> <a href="mailto:name@yoursite.com">contact@graceframe.com</a></span>
+                <span class="topbar-phone"><i class="fa fa-phone"></i> 1-800-264-0644</span>
             </div><!-- end callus -->
         </div><!-- end columns -->
     </div><!-- end container -->

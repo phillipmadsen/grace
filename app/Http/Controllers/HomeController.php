@@ -26,6 +26,6 @@ class HomeController extends Controller {
         $sliders = $this->slider->all();
         $projects = $this->project->all();
 
-        return view('frontend/layout/dashboard', compact('sliders', 'projects', 'languages'));
+        return view('frontend/pages/home/home', compact('sliders', 'projects', 'languages'));
     }
 }

@@ -31,4 +31,14 @@ class PageController extends Controller {
 
         return view('frontend.page.show', compact('page'));
     }
+
+
+      public function machine() {
+
+
+
+        return view('frontend.pages.machine-quilting.machine');
+    }
+
+
 }

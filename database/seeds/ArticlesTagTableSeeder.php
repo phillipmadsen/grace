@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Grace\Services\LoremIpsumGenerator;
 
 class ArticlesTagsTableSeeder extends Seeder {
 

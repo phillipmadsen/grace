@@ -16,117 +16,9 @@ class MenusTableSeeder extends Seeder {
 
         DB::table('menus')->insert(array(
             array(
-                'title'        => 'Ana Sayfa',
-                'url'          => '/',
-                'order'        => 1,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'home',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'Haberler',
-                'url'          => '/tr/news',
-                'order'        => 2,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'news',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'Blog',
-                'url'          => '/tr/article',
-                'order'        => 3,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'blog',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'Projeler',
-                'url'          => '/tr/project',
-                'order'        => 4,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'project',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'Videolar',
-                'url'          => '/tr/video',
-                'order'        => 5,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'video',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'Galeri',
-                'url'          => '/tr/photo-gallery/'. Str::slug('Fotoğraf Galerisi'),
-                'order'        => 6,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'photo_gallery',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'Hakkımızda',
-                'url'          => '/tr/page/' . Str::slug('Hakkımızda'),
-                'order'        => 7,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'page',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'SSS',
-                'url'          => '/tr/faq',
-                'order'        => 8,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'faq',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
-                'title'        => 'İletişim',
-                'url'          => '/tr/contact',
-                'order'        => 9,
-                'parent_id'    => 0,
-                'type'         => 'module',
-                'option'       => 'contact',
-                'is_published' => true,
-                'lang'         => 'tr',
-                'created_at'   => new Datetime,
-                'updated_at'   => new Datetime
-            ),
-            array(
                 'title'        => 'Home',
                 'url'          => '/',
-                'order'        => 10,
+                'order'        => 1,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'home',
@@ -138,7 +30,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'News',
                 'url'          => '/en/news',
-                'order'        => 11,
+                'order'        => 2,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'news',
@@ -150,7 +42,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Blog',
                 'url'          => '/en/article',
-                'order'        => 12,
+                'order'        => 3,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'blog',
@@ -162,7 +54,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Projects',
                 'url'          => '/en/project',
-                'order'        => 13,
+                'order'        => 4,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'project',
@@ -174,7 +66,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Videos',
                 'url'          => '/en/video',
-                'order'        => 14,
+                'order'        => 5,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'video',
@@ -184,9 +76,33 @@ class MenusTableSeeder extends Seeder {
                 'updated_at'   => new Datetime
             ),
             array(
-                'title'        => 'Faq',
+                'title'        => 'Gallery',
+                'url'          => '/en/photo-gallery/'. Str::slug('Gallery'),
+                'order'        => 6,
+                'parent_id'    => 0,
+                'type'         => 'module',
+                'option'       => 'photo_gallery',
+                'is_published' => true,
+                'lang'         => 'en',
+                'created_at'   => new Datetime,
+                'updated_at'   => new Datetime
+            ),
+            array(
+                'title'        => 'Pages',
+                'url'          => '/en/page/' . Str::slug('page'),
+                'order'        => 7,
+                'parent_id'    => 0,
+                'type'         => 'module',
+                'option'       => 'page',
+                'is_published' => true,
+                'lang'         => 'en',
+                'created_at'   => new Datetime,
+                'updated_at'   => new Datetime
+            ),
+            array(
+                'title'        => 'FAQs',
                 'url'          => '/en/faq',
-                'order'        => 15,
+                'order'        => 8,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'faq',
@@ -196,9 +112,9 @@ class MenusTableSeeder extends Seeder {
                 'updated_at'   => new Datetime
             ),
             array(
-                'title'        => 'Contact Us',
+                'title'        => 'Contact',
                 'url'          => '/en/contact',
-                'order'        => 16,
+                'order'        => 9,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'contact',
@@ -206,7 +122,7 @@ class MenusTableSeeder extends Seeder {
                 'lang'         => 'en',
                 'created_at'   => new Datetime,
                 'updated_at'   => new Datetime
-            )
+            ),
         ));
     }
 }

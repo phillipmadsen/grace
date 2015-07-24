@@ -2,34 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{!! $settings['site_title'] or "Grace Manager - Multi Language Content Managment System" !!}</title>
+    <title>{!! $settings['site_title'] or "Grace Multi Language Managment System" !!}</title>
+    @yield('seo')
     <meta name="description" content="{!! isset($meta_description) ? $meta_description : ($settings['meta_description']) !!}">
     <meta name="keywords" content="{!! isset($meta_keywords) ? $meta_keywords : ($settings['meta_keywords']) !!}">
-    <meta name="author" content="Phillip Madsen">
+    <meta name="author" content=" ">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {!! HTML::script('assets/js/jquery.2.0.3.js') !!}
-    {!! HTML::style("frontend/css/bootstrap.min.css") !!}
-    {!! HTML::style("frontend/css/font-awesome.min.css") !!}
-    {!! HTML::style("frontend/css/prettyPhoto.css") !!}
-    {!! HTML::style("frontend/css/animate.css") !!}
-    {!! HTML::style("frontend/css/main.css") !!}
-    
-    <!--[if lt IE 9]>
-    {!! HTML::script("frontend/js/html5shiv.js") !!}
-    {!! HTML::script("frontend/js/respond.min.js") !!}
-    <![endif]-->
-    <link rel="shortcut icon" href="{!! url('favicon.ico') !!}">
-    <script type="text/javascript">
-    
-    </script>
+
+@include('frontend/layout/head')
 </head><!--/head-->
-<body>
-@include('frontend/layout/menu')
- 
+
+<body class="stretched">
+<!-- Document Wrapper ============================================= -->
+    <div id="wrapper" class="clearfix">
+{{-- @include('frontend/layout/top') --}}
+       <!-- Header ============================================= -->
+        <header id="header" class="transparent-header semi-transparent dark full-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo ============================================= -->
+                    <div id="logo">
+                        <a href="{!! url('/' . getLang()) !!}" class="standard-logo" data-dark-logo="{!! url('frontend/images/grace-logo-light.png') !!}"><img src="{!! url('frontend/images/grace-logo-light.png') !!}" alt="Grace Logo"></a>
+                        <a href="{!! url('/' . getLang()) !!}" class="retina-logo" data-dark-logo="{!! url('frontend/images/grace-logo-light.png') !!}"><img src="{!! url('frontend/images/grace-logo-light.png') !!}" alt="Grace Logo"></a>
+                    </div><!-- #logo end -->
+
+
+
+                    <!-- Primary Navigation ============================================= -->
+                    <nav id="primary-menu">
+                                    @include('frontend/layout/menu')
+
+                        <!-- Top Cart ============================================= -->
+                        <div id="top-cart">
+                            <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+                            <div class="top-cart-content">
+                                <div class="top-cart-title">
+                                    <h4>Shopping Cart</h4>
+                                </div>
+                                <div class="top-cart-items">
+                                    <div class="top-cart-item clearfix">
+                                        <div class="top-cart-item-image">
+                                            <a href="#">
+                                            {!! HTML::image('frontend/images/shop/small/1.jpg', 'ALT TEXT') !!}
+                                            </a>
+                                        </div>
+                                        <div class="top-cart-item-desc">
+                                            <a href="#">Blue Round-Neck Tshirt</a>
+                                            <span class="top-cart-item-price">$19.99</span>
+                                            <span class="top-cart-item-quantity">x 2</span>
+                                        </div>
+                                    </div>
+                                    <div class="top-cart-item clearfix">
+                                        <div class="top-cart-item-image">
+                                            <a href="#">
+                                           {!! HTML::image('frontend/images//shop/small/6.jpg', 'ALT TEXT') !!}
+                                           </a>
+                                        </div>
+                                        <div class="top-cart-item-desc">
+                                            <a href="#">Light Blue Denim Dress</a>
+                                            <span class="top-cart-item-price">$24.99</span>
+                                            <span class="top-cart-item-quantity">x 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-cart-action clearfix">
+                                    <span class="fleft top-checkout-price">$114.95</span>
+                                    <button class="button button-3d button-small nomargin fright">View Cart</button>
+                                </div>
+                            </div>
+                        </div><!-- #top-cart end -->
+
+                        <!-- Top Search ============================================= -->
+                        <div id="top-search">
+                            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                            <form action="{!! url('tr/search') !!}" method="get" role="search">>
+                                <input type="text" name="q" class="form-control" value="{!! $q or null !!}" placeholder="Type &amp; Hit Enter..">
+                            </form>
+                        </div><!-- #top-search end -->
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+@yield('pagetitle')
+
+
+
+
+
 @yield('content')
-@include('frontend/layout/footer')
-{!! HTML::script("frontend/js/bootstrap.min.js") !!}
-{!! HTML::script("frontend/js/jquery.prettyPhoto.js") !!}
-{!! HTML::script("frontend/js/main.js") !!}
+@include('frontend/layout/foot')
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Footer Scripts ============================================= -->
+    {!! HTML::script('frontend/js/functions.js') !!}
 </body>
 </html>

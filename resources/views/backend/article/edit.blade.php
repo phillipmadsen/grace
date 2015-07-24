@@ -28,6 +28,35 @@
 <br>
 <div class="container">
 
+{{-- <div class="row">
+        <div class="col-xs-12">
+            <div id="frmModel" class="box">
+                <div class="box-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Custom Article Composer
+                            <span class="pull-right clickable">
+                                <i class="glyphicon glyphicon-chevron-up"></i>
+                            </span>
+                        </div>
+                            <div class="panel-body"> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {!! Form::open( array( 'route' => array(getLang(). '.admin.article.update', $article->id), 'method' => 'PATCH', 'files'=>true)) !!}
     <!-- Title -->
     <div class="control-group {!! $errors->has('title') ? 'has-error' : '' !!}">
@@ -42,31 +71,46 @@
     </div>
     <br>
 
-    <!-- Tag -->
-    <div class="control-group {!! $errors->has('tag') ? 'has-error' : '' !!}">
-        <label class="control-label" for="title">Tag</label>
 
-        <div class="controls">
-            {!! Form::text('tag', $tags, array('class'=>'form-control', 'id' => 'tag', 'placeholder'=>'Tag', 'value'=>Input::old('tag'))) !!}
-            @if ($errors->first('tag'))
-            <span class="help-block">{!! $errors->first('tag') !!}</span>
-            @endif
+
+
+
+
+
+
+<!-- / SUMMERY / Form Input -->
+<div class="form-group">
+    {!! Form::label('summary', 'Excerpt / Summary:') !!}
+    <div class="input-group">
+        {{--
+        <div class="input-group-addon"></div>
+        --}}
+{!! Form::textarea('summary', $article->summary, array('class' => 'form-control', 'data-autogrow' => '', 'rows' => '3', 'placeholder' => 'short summary goes here for post listing page')) !!}
+        <div class="input-group-addon"> <i class="livicon" data-name="info" data-size="18" data-loop="false" data-c="#428BCA" data-hc="#428BCA" title="view info" data-toggle="collapse" href="#openinfo1" aria-expanded="false" aria-controls="openinfo1"></i>
         </div>
     </div>
-    <br>
-
-    <!-- Category -->
-    <div class="control-group {!! $errors->has('category') ? 'error' : '' !!}">
-        <label class="control-label" for="title">Category</label>
-
-        <div class="controls">
-            {!! Form::select('category', $categories, $article->category_id, array('class' => 'form-control', 'value'=>Input::old('category'))) !!}
-            @if ($errors->first('category'))
-            <span class="help-block">{!! $errors->first('category') !!}</span>
-            @endif
+    {{-- / input-group end--}}
+    <div class="collapse" id="openinfo1">
+        <div class="well">
+            <medium class="list-group-item list-group-item-info">
+                short summary goes here for post listing page / SCHEMA: blogPosting itemprop="articleBody"
+            </medium>
         </div>
     </div>
-    <br>
+    {{--
+    <span id="helpBlock" class="help-block">
+        A block of help text that breaks onto a new line and may extend beyond one line.
+    </span>
+    --}}
+    <small class="text-danger">
+        {{ $errors->first('summary') }}
+    </small>
+</div>
+<br>
+
+
+
+
 
     <!-- Content -->
     <div class="control-group {!! $errors->has('content') ? 'has-error' : '' !!}">
@@ -136,6 +180,39 @@
         </div>
         <br>
 
+
+
+    <!-- Category -->
+    <div class="control-group {!! $errors->has('category') ? 'error' : '' !!}">
+        <label class="control-label" for="title">Category</label>
+
+        <div class="controls">
+            {!! Form::select('category', $categories, $article->category_id, array('class' => 'form-control', 'value'=>Input::old('category'))) !!}
+            @if ($errors->first('category'))
+            <span class="help-block">{!! $errors->first('category') !!}</span>
+            @endif
+        </div>
+    </div>
+    <br>
+
+    <!-- Tag -->
+    <div class="control-group {!! $errors->has('tag') ? 'has-error' : '' !!}">
+        <label class="control-label" for="title">Tag</label>
+
+        <div class="controls">
+            {!! Form::text('tag', $tags, array('class'=>'form-control', 'id' => 'tag', 'placeholder'=>'Tag', 'value'=>Input::old('tag'))) !!}
+            @if ($errors->first('tag'))
+            <span class="help-block">{!! $errors->first('tag') !!}</span>
+            @endif
+        </div>
+    </div>
+    <br>
+
+
+
+
+
+
     <!-- Published -->
     <div class="control-group {!! $errors->has('is_published') ? 'has-error' : '' !!}">
 
@@ -157,4 +234,40 @@
         };
     </script>
 </div>
+
+
+
+
+
+{{--
+
+</div>
+
+                        <div class="panel-footer ">
+                        Make sure the post is spell checked and the correct extra schema tags are included befor you publish.
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div class="form-group">
+                        <div class="text-right">
+                            <button class="btn btn-warning btn-apply">
+                            <i class="fa fa-edit fa-fw"></i>Apply</button>
+                            <button class="btn btn-success">
+                            <i class="fa fa-edit fa-floppy-o fa-fw"></i>Save</button>
+
+                            <i class="fa fa-times fa-fw"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ --}}
+
+
+
+
+
+
 @stop

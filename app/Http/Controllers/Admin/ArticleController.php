@@ -15,6 +15,9 @@ use Grace\Exceptions\Validation\ValidationException;
 use Grace\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Grace\Services\LoremIpsumGenerator;
+
+
 
 /**
  * Class ArticleController

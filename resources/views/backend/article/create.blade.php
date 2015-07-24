@@ -39,31 +39,25 @@
     </div>
     <br>
 
-    <!-- Tag -->
-    <div class="control-group {!! $errors->has('tag') ? 'has-error' : '' !!}">
-        <label class="control-label" for="title">Tag</label>
 
-        <div class="controls">
-            {!! Form::text('tag', null, array('class'=>'form-control', 'id' => 'tag', 'placeholder'=>'Tag', 'value'=>Input::old('tag'))) !!}
-            @if ($errors->first('tag'))
-            <span class="help-block">{!! $errors->first('tag') !!}</span>
-            @endif
+<!-- / SUMMERY / Form Input -->
+    <div class="form-group">
+        {!! Form::label('summary', 'Excerpt / Summary:') !!}
+        <div class="input-group"> {{-- <div class="input-group-addon"></div> --}}
+        {!! Form::textarea('summary', null, ['class' => 'form-control', 'data-autogrow' => '', 'rows' => '3', 'placeholder' => 'short summary goes here for post listing page']) !!}
+            <div class="input-group-addon">
+                <i class="livicon" data-name="info" data-size="18" data-loop="false" data-c="#428BCA" data-hc="#428BCA" title="view info" data-toggle="collapse" href="#openinfo1" aria-expanded="false" aria-controls="openinfo1"></i>
+            </div>
+        </div> {{-- / input-group end--}}
+        <div class="collapse" id="openinfo1">
+            <div class="well"><medium class="list-group-item list-group-item-info">short summary goes here for post listing page / SCHEMA: blogPosting itemprop="articleBody"</medium>
+            </div>
         </div>
+    {{--    <span id="helpBlock" class="help-block">
+        A block of help text that breaks onto a new line and may extend beyond one line. </span> --}}
+        <small class="text-danger">{{ $errors->first('summary') }}</small>
     </div>
-    <br>
 
-    <!-- Category -->
-    <div class="control-group {!! $errors->has('category') ? 'error' : '' !!}">
-        <label class="control-label" for="title">Category</label>
-
-        <div class="controls">
-            {!! Form::select('category', $categories, null, array('class' => 'form-control', 'value'=>Input::old('category'))) !!}
-            @if ($errors->first('category'))
-            <span class="help-block">{!! $errors->first('category') !!}</span>
-            @endif
-        </div>
-    </div>
-    <br>
 
     <!-- Content -->
     <div class="control-group {!! $errors->has('content') ? 'has-error' : '' !!}">
@@ -129,6 +123,34 @@
       @if ($errors->first('image')) <span class="help-block">{!! $errors->first('image') !!}</span> @endif </span> <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a> </div>
     </div>
     <br>
+
+
+ <!-- Category -->
+    <div class="control-group {!! $errors->has('category') ? 'error' : '' !!}">
+        <label class="control-label" for="title">Category</label>
+
+        <div class="controls">
+            {!! Form::select('category', $categories, null, array('class' => 'form-control', 'value'=>Input::old('category'))) !!}
+            @if ($errors->first('category'))
+            <span class="help-block">{!! $errors->first('category') !!}</span>
+            @endif
+        </div>
+    </div>
+    <br>
+
+    <!-- Tag -->
+    <div class="control-group {!! $errors->has('tag') ? 'has-error' : '' !!}">
+        <label class="control-label" for="title">Tag</label>
+
+        <div class="controls">
+            {!! Form::text('tag', null, array('class'=>'form-control', 'id' => 'tag', 'placeholder'=>'Tag', 'value'=>Input::old('tag'))) !!}
+            @if ($errors->first('tag'))
+            <span class="help-block">{!! $errors->first('tag') !!}</span>
+            @endif
+        </div>
+    </div>
+    <br>
+
 
     <!-- Published -->
     <div class="control-group {!! $errors->has('is_published') ? 'has-error' : '' !!}">

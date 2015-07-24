@@ -9,6 +9,7 @@ use Input;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use View;
+use Grace\Services\LoremIpsumGenerator;
 
 /**
  * Class ArticleController

@@ -16,28 +16,33 @@ class CategoriesTableSeeder extends Seeder {
 
         DB::table('categories')->insert(array(
             array(
-                'title' => 'PHP',
-                'slug'  => Str::slug('PHP'),
-                'lang'  => 'tr'),
+                'title' => 'The Grace Company',
+                'slug'  => Str::slug('The Grace Company'),
+                'lang'  => 'en'),
             array(
-                'title' => 'SQL',
-                'slug'  => Str::slug('SQL'),
-                'lang'  => 'tr'),
+                'title' => 'Hand Quilting',
+                'slug'  => Str::slug('Hand Quilting'),
+                'lang'  => 'en'),
             array(
-                'title' => 'HTML',
-                'slug'  => Str::slug('HTML'),
-                'lang'  => 'tr'),
+                'title' => 'Machine Quilting',
+                'slug'  => Str::slug('Machine Quilting'),
+                'lang'  => 'en'),
             array(
-                'title' => 'CSS',
-                'slug'  => Str::slug('CSS'),
-                'lang'  => 'tr'),
+                'title' => 'Quilting Machine',
+                'slug'  => Str::slug('Quilting Machine'),
+                'lang'  => 'en'),
             array(
-                'title' => 'Javascript',
-                'slug'  => Str::slug('Javascript'),
-                'lang'  => 'tr'),
+                'title' => 'Quilting Frames',
+                'slug'  => Str::slug('Quilting Frames'),
+                'lang'  => 'en'),
             array(
-                'title' => 'JQuery',
-                'slug'  => Str::slug('JQuery'),
-                'lang'  => 'en')));
+                'title' => 'Qnique',
+                'slug'  => Str::slug('Qnique'),
+                'lang'  => 'en'),
+            array(
+                'title' => 'Quilting Accessories',
+                'slug'  => Str::slug('Quilting Accessories'),
+                'lang'  => 'en')
+    ));
     }
 }

@@ -13,7 +13,7 @@ class Article extends BaseModel implements ModelInterface, SluggableInterface {
     use SluggableTrait;
 
     public $table = 'articles';
-    protected $fillable = ['title', 'content', 'meta_keywords', 'meta_description', 'is_published'];
+    protected $fillable = ['title', 'content', 'meta_keywords', 'meta_description', 'is_published', 'summery','seen'];
     protected $appends = ['url'];
 
     protected $sluggable = array(
