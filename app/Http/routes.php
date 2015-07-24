@@ -40,7 +40,7 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale(), 'before'
     // frontend dashboard
    Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
-Route::get('machine-quilting', array('as' => 'dashboard.page.machine', 'uses' => 'PageController@machine'));
+// Route::get('machine-quilting', array('as' => 'dashboard.page.machine', 'uses' => 'PageController@machine'));
     // article
     Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
     Route::get('/article/{slug}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
@@ -56,8 +56,8 @@ Route::get('machine-quilting', array('as' => 'dashboard.page.machine', 'uses' =>
     Route::get('/category/{slug}', array('as' => 'dashboard.category', 'uses' => 'CategoryController@index'));
 
     // page
-    Route::get('/page', array('as' => 'dashboard.page', 'uses' => 'PageController@index'));
-    Route::get('/page/{slug}', array('as' => 'dashboard.page.show', 'uses' => 'PageController@show'));
+    //Route::get('/{slug}', array('as' => 'dashboard.{slug}', 'uses' => 'PageController@{slug}'));
+    //Route::get('/{slug}', array('as' => 'dashboard.page.show', 'uses' => 'PageController@show'));
 
     // photo gallery
     Route::get('/photo-gallery/{slug}', array('as'   => 'dashboard.photo_gallery.show',
@@ -90,6 +90,35 @@ Route::get('machine-quilting', array('as' => 'dashboard.page.machine', 'uses' =>
     Route::get('/save-maillist', array('as' => 'frontend.maillist', 'uses' => 'MaillistController@getMaillist'));
     Route::post('/save-maillist', array('as' => 'frontend.maillist.post', 'uses' => 'MaillistController@postMaillist'));
 });
+
+//Route::get('{name?}', array('as' => 'dashboard.pages.{name?}.{name?}', 'uses' => 'PageController@showFrontEndView'));
+ //Route::get('/video/{slug}', array('as' => 'dashboard.video.show', 'uses' => 'VideoController@show'));
+//Route::get('{name?}', 'PageController@showFrontEndView');
+
+// Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), function () {
+//         Route::group(array( 'prefix'    => '/{slug}' ),  function () {
+
+//         Route::get('/', array('as' => 'frontend.pages.{slug}', 'uses' => 'PageController@showFrontEndView'));
+
+
+//         }) ;
+// });
+
+Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), function () {
+        Route::group(array( 'prefix'    => '/machine-quilting' ),  function () {
+
+        Route::get('/', array('as' => 'frontend.pages.machine-quilting.machine', 'uses' => 'PageController@machine'));
+        Route::get('/gq-frame', array('as' => 'frontend.pages.machine-quilting.gq-frame', 'uses' => 'PageController@gqframe'));
+        Route::get('/compare-machine-frames', array('as' => 'frontend.pages.machine-quilting.compare-machine-frames', 'uses' => 'PageController@compareMachineFrames'));
+
+
+        }) ;
+});
+
+// Route::resource('faq', 'ProductFaqController', [
+//     'as' => 'prefix'
+// ]);
+
 
 /*
 |--------------------------------------------------------------------------

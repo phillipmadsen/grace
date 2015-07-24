@@ -82,8 +82,7 @@
                             });
                         </script>
 
-                        <!-- Top Search
-                        ============================================= -->
+                        <!-- Top Search ============================================= -->
                         <div id="top-search">
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                             <form action="search.html" method="get">

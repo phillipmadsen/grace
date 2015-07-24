@@ -27,7 +27,7 @@
                     ============================================= -->
                     <div class="top-links">
                         <ul>
-                            <li><a href="index.html">Locations</a>
+                            <li><a href="{!! url('/' . getLang()) !!}">Dealer Locations</a>
                                 <ul>
                                     <li><a href="#">Australia</a></li>
                                     <li><a href="#">Canada</a></li>

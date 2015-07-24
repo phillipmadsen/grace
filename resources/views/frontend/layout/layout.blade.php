@@ -8,7 +8,7 @@
     <meta name="keywords" content="{!! isset($meta_keywords) ? $meta_keywords : ($settings['meta_keywords']) !!}">
     <meta name="author" content=" ">
 
-
+<script>document.createElement("article");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 @include('frontend/layout/head')
@@ -36,7 +36,7 @@
 
 
                     <!-- Primary Navigation ============================================= -->
-                    <nav id="primary-menu">
+                    <nav id="primary-menu" role="navigation">
                                     @include('frontend/layout/menu')
 
                         <!-- Top Cart ============================================= -->
@@ -95,6 +95,8 @@
 
         </header><!-- #header end -->
 
+@yield('submenu')
+@yield('slider')
 @yield('pagetitle')
 
 
